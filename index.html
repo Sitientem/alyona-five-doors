@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#7c3aed">
+  <meta name="description" content="Детская PWA-игра Алёна и пять дверей">
+  <title>Алёна и пять дверей</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <section class="start-screen" id="startScreen">
+      <div class="cloud cloud-one"></div>
+      <div class="cloud cloud-two"></div>
+      <div class="hero">
+        <p class="eyebrow">маленькое приключение</p>
+        <h1>Алёна и пять дверей</h1>
+        <p class="lead">Открой все двери, ответь на вопросы и собери пять звёздочек.</p>
+        <button class="primary-button" id="startButton" type="button">Пуск</button>
+      </div>
+    </section>
+
+    <section class="game-screen hidden" id="gameScreen" aria-label="Игровое поле">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">комната дверей</p>
+          <h2>Выбери дверь</h2>
+        </div>
+        <div class="stars" id="stars" aria-label="Собрано звёздочек">☆☆☆☆☆</div>
+      </header>
+
+      <div class="scene" id="scene">
+        <div class="alyona" aria-label="Алёна">
+          <div class="hair"></div>
+          <div class="face">
+            <span class="eye left"></span>
+            <span class="eye right"></span>
+            <span class="smile"></span>
+          </div>
+          <div class="dress"></div>
+          <div class="legs"></div>
+        </div>
+
+        <div class="doors" id="doors">
+          <button class="door door-one" type="button" data-door="0" aria-label="Открыть дверь 1">
+            <span class="door-number">1</span>
+            <span class="handle"></span>
+          </button>
+          <button class="door door-two" type="button" data-door="1" aria-label="Открыть дверь 2">
+            <span class="door-number">2</span>
+            <span class="handle"></span>
+          </button>
+          <button class="door door-three" type="button" data-door="2" aria-label="Открыть дверь 3">
+            <span class="door-number">3</span>
+            <span class="handle"></span>
+          </button>
+          <button class="door door-four" type="button" data-door="3" aria-label="Открыть дверь 4">
+            <span class="door-number">4</span>
+            <span class="handle"></span>
+          </button>
+          <button class="door door-five" type="button" data-door="4" aria-label="Открыть дверь 5">
+            <span class="door-number">5</span>
+            <span class="handle"></span>
+          </button>
+        </div>
+      </div>
+
+      <section class="question-card hidden" id="questionCard" aria-label="Вопрос">
+        <p class="door-label" id="doorLabel">Дверь 1</p>
+        <h3 id="questionText"></h3>
+        <div class="answers" id="answers"></div>
+        <p class="feedback" id="feedback"></p>
+      </section>
+
+      <section class="finish hidden" id="finishScreen">
+        <div class="kitten" aria-label="Котёнок">
+          <span class="ear left-ear"></span>
+          <span class="ear right-ear"></span>
+          <span class="cat-face">
+            <i class="cat-eye left"></i>
+            <i class="cat-eye right"></i>
+            <i class="cat-nose"></i>
+          </span>
+        </div>
+        <h2>Пять звёздочек собраны!</h2>
+        <p>Котёнок рад, Алёна справилась со всеми дверями.</p>
+        <button class="secondary-button" id="restartButton" type="button">Играть ещё раз</button>
+      </section>
+    </section>
+  </main>
+
+  <script src="game.js" defer></script>
+</body>
+</html>

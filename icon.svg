@@ -1,22 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Алёна и пять дверей">
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#8fd3ff"/>
-      <stop offset="52%" stop-color="#f8f3ff"/>
-      <stop offset="100%" stop-color="#ffd166"/>
+      <stop offset="0%" stop-color="#1a0b42"/>
+      <stop offset="48%" stop-color="#6d40d5"/>
+      <stop offset="100%" stop-color="#9bdcff"/>
     </linearGradient>
-    <linearGradient id="door" x1="0" x2="1">
-      <stop offset="0%" stop-color="#ff9f43"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
+    <linearGradient id="door" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ff5fa2"/>
+      <stop offset="52%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#28c7c1"/>
     </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   <rect width="512" height="512" rx="112" fill="url(#bg)"/>
-  <circle cx="380" cy="118" r="54" fill="#ffd166"/>
-  <path d="M105 390c42-54 93-54 136 0 45-54 100-54 156 0v54H105z" fill="#71d6a1"/>
-  <rect x="174" y="144" width="164" height="244" rx="24" fill="url(#door)"/>
-  <rect x="204" y="182" width="42" height="64" rx="14" fill="#ffffff" opacity=".28"/>
-  <rect x="266" y="182" width="42" height="64" rx="14" fill="#ffffff" opacity=".28"/>
-  <circle cx="302" cy="276" r="14" fill="#ffd166"/>
-  <path d="M256 69l23 47 52 7-38 37 9 52-46-24-46 24 9-52-38-37 52-7z" fill="#ffffff"/>
-  <path d="M135 138c17-24 45-24 62 0 19-24 49-24 75 0" fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round"/>
+  <circle cx="392" cy="108" r="56" fill="#ffd45e" filter="url(#glow)"/>
+  <path d="M72 386c48-62 106-62 172 0 60-62 128-62 196 0v70H72z" fill="#68e0b0" opacity=".82"/>
+  <path d="M91 93l12 34 36 2-28 21 9 35-29-20-30 20 10-35-29-21 36-2z" fill="#ffd45e"/>
+  <path d="M342 252l18 50 52 3-42 31 14 50-42-29-43 29 14-50-42-31 52-3z" fill="#ffd45e"/>
+  <rect x="169" y="144" width="174" height="238" rx="64" fill="url(#door)" filter="url(#glow)"/>
+  <rect x="205" y="184" width="102" height="118" rx="36" fill="#fff" opacity=".22"/>
+  <circle cx="305" cy="267" r="15" fill="#ffd45e"/>
+  <circle cx="256" cy="118" r="40" fill="#fff9ce"/>
+  <text x="256" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="900" fill="#4c1d95">5</text>
+  <path d="M214 404h84" stroke="#261235" stroke-width="16" stroke-linecap="round"/>
 </svg>

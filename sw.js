@@ -1,11 +1,11 @@
-const CACHE_NAME = "alyona-five-doors-v1";
+const CACHE_NAME = "alyona-five-doors-v5";
 const ASSET_PATHS = [
   "./",
   "./index.html",
-  "./styles.css",
-  "./game.js",
-  "./manifest.webmanifest",
-  "./icon.svg"
+  "./styles.css?v=5",
+  "./game.js?v=5",
+  "./manifest.webmanifest?v=5",
+  "./icon.svg?v=5"
 ];
 
 function scopedUrl(path) {

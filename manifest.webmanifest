@@ -1,13 +1,13 @@
 {
   "name": "Алёна и пять дверей",
   "short_name": "Пять дверей",
-  "description": "Детская игра с вопросами, дверями, звёздочками и котёнком.",
+  "description": "Волшебная детская игра с дверями, заданиями, звёздочками и котёнком.",
   "lang": "ru",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f8f3ff",
-  "theme_color": "#7c3aed",
+  "background_color": "#28105c",
+  "theme_color": "#4c1d95",
   "icons": [
     {
       "src": "icon.svg",

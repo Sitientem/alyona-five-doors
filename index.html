@@ -3,66 +3,113 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#7c3aed">
+  <meta name="theme-color" content="#4c1d95">
   <meta name="description" content="Детская PWA-игра Алёна и пять дверей">
   <title>Алёна и пять дверей</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.webmanifest?v=5">
+  <link rel="icon" href="icon.svg?v=5" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <main class="app" aria-live="polite">
     <section class="start-screen" id="startScreen">
-      <div class="cloud cloud-one"></div>
-      <div class="cloud cloud-two"></div>
+      <div class="magic-sky" aria-hidden="true">
+        <span class="spark spark-a"></span>
+        <span class="spark spark-b"></span>
+        <span class="spark spark-c"></span>
+        <span class="spark spark-d"></span>
+        <span class="moon"></span>
+        <span class="cloud cloud-one"></span>
+        <span class="cloud cloud-two"></span>
+      </div>
+
       <div class="hero">
-        <p class="eyebrow">маленькое приключение</p>
-        <h1>Алёна и пять дверей</h1>
-        <p class="lead">Открой все двери, ответь на вопросы и собери пять звёздочек.</p>
-        <button class="primary-button" id="startButton" type="button">Пуск</button>
+        <div class="hero-castle" aria-hidden="true">
+          <span class="tower tower-left"></span>
+          <span class="tower tower-main"></span>
+          <span class="tower tower-right"></span>
+          <span class="castle-door"></span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">волшебное испытание</p>
+          <h1>Алёна и пять дверей</h1>
+          <p class="lead">Открой сказочные двери, реши задания для почти второклассницы и собери пять сияющих звёзд.</p>
+          <button class="primary-button" id="startButton" type="button">
+            <span>Пуск</span>
+            <i aria-hidden="true">★</i>
+          </button>
+        </div>
       </div>
     </section>
 
     <section class="game-screen hidden" id="gameScreen" aria-label="Игровое поле">
       <header class="topbar">
         <div>
-          <p class="eyebrow">комната дверей</p>
+          <p class="eyebrow">звёздная галерея</p>
           <h2>Выбери дверь</h2>
         </div>
-        <div class="stars" id="stars" aria-label="Собрано звёздочек">☆☆☆☆☆</div>
+        <div class="score-panel">
+          <span class="score-caption">звёзды</span>
+          <div class="stars" id="stars" aria-label="Собрано звёздочек">☆☆☆☆☆</div>
+        </div>
       </header>
 
       <div class="scene" id="scene">
+        <div class="scene-sky" aria-hidden="true">
+          <span class="scene-moon"></span>
+          <span class="comet"></span>
+          <span class="tiny-star star-one"></span>
+          <span class="tiny-star star-two"></span>
+          <span class="tiny-star star-three"></span>
+        </div>
+
         <div class="alyona" aria-label="Алёна">
-          <div class="hair"></div>
-          <div class="face">
-            <span class="eye left"></span>
-            <span class="eye right"></span>
-            <span class="smile"></span>
-          </div>
-          <div class="dress"></div>
-          <div class="legs"></div>
+          <span class="bow"></span>
+          <span class="hair"></span>
+          <span class="face">
+            <i class="eye left"></i>
+            <i class="eye right"></i>
+            <i class="cheek cheek-left"></i>
+            <i class="cheek cheek-right"></i>
+            <i class="smile"></i>
+          </span>
+          <span class="arm arm-left"></span>
+          <span class="arm arm-right"></span>
+          <span class="wand"></span>
+          <span class="dress"></span>
+          <span class="legs"></span>
+          <span class="shoes"></span>
         </div>
 
         <div class="doors" id="doors">
-          <button class="door door-one" type="button" data-door="0" aria-label="Открыть дверь 1">
-            <span class="door-number">1</span>
+          <button class="door door-math" type="button" data-door="0" aria-label="Открыть дверь 1">
+            <span class="door-glow"></span>
+            <span class="door-symbol">+</span>
+            <span class="door-title">Счёт</span>
             <span class="handle"></span>
           </button>
-          <button class="door door-two" type="button" data-door="1" aria-label="Открыть дверь 2">
-            <span class="door-number">2</span>
+          <button class="door door-words" type="button" data-door="1" aria-label="Открыть дверь 2">
+            <span class="door-glow"></span>
+            <span class="door-symbol">А</span>
+            <span class="door-title">Слова</span>
             <span class="handle"></span>
           </button>
-          <button class="door door-three" type="button" data-door="2" aria-label="Открыть дверь 3">
-            <span class="door-number">3</span>
+          <button class="door door-nature" type="button" data-door="2" aria-label="Открыть дверь 3">
+            <span class="door-glow"></span>
+            <span class="door-symbol">☘</span>
+            <span class="door-title">Мир</span>
             <span class="handle"></span>
           </button>
-          <button class="door door-four" type="button" data-door="3" aria-label="Открыть дверь 4">
-            <span class="door-number">4</span>
+          <button class="door door-logic" type="button" data-door="3" aria-label="Открыть дверь 4">
+            <span class="door-glow"></span>
+            <span class="door-symbol">◇</span>
+            <span class="door-title">Логика</span>
             <span class="handle"></span>
           </button>
-          <button class="door door-five" type="button" data-door="4" aria-label="Открыть дверь 5">
-            <span class="door-number">5</span>
+          <button class="door door-kitten" type="button" data-door="4" aria-label="Открыть дверь 5">
+            <span class="door-glow"></span>
+            <span class="door-symbol">♡</span>
+            <span class="door-title">Сюрприз</span>
             <span class="handle"></span>
           </button>
         </div>
@@ -76,6 +123,9 @@
       </section>
 
       <section class="finish hidden" id="finishScreen">
+        <div class="finish-sparks" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
         <div class="kitten" aria-label="Котёнок">
           <span class="ear left-ear"></span>
           <span class="ear right-ear"></span>
@@ -83,15 +133,18 @@
             <i class="cat-eye left"></i>
             <i class="cat-eye right"></i>
             <i class="cat-nose"></i>
+            <i class="cat-mouth"></i>
           </span>
+          <span class="cat-body"></span>
+          <span class="cat-tail"></span>
         </div>
         <h2>Пять звёздочек собраны!</h2>
-        <p>Котёнок рад, Алёна справилась со всеми дверями.</p>
+        <p>Алёна прошла все двери. Котёнок объявляет: это был настоящий первый-классный квест.</p>
         <button class="secondary-button" id="restartButton" type="button">Играть ещё раз</button>
       </section>
     </section>
   </main>
 
-  <script src="game.js" defer></script>
+  <script src="game.js?v=5" defer></script>
 </body>
 </html>
